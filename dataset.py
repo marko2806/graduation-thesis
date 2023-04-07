@@ -38,18 +38,21 @@ def initialize_images_dataframe(root):
 
 
 class SKU110KDataset(torch.utils.data.Dataset):
-    def __init__(self, root, transforms, task="train"):
+    def __init__(self, root, transforms, task="train", normalize_boxes=False):
         self.root = root
         self.transforms = transforms
         self.task = task
         self.imgs = list(sorted(os.listdir(os.path.join(root, "images", task))))
         self.labels = list(sorted(os.listdir(os.path.join(root, "labels", task))))
+        self.normalize_boxes = normalize_boxes
 
     def __getitem__(self, idx):
         # load images and masks
         img_path = os.path.join(self.root, "images", self.task, self.imgs[idx])
         label_path = os.path.join(self.root, "labels", self.task, self.masks[idx])
         img = Image.open(img_path).convert("RGB")
+
+        width, height = img.size
         
         with open(label_path, "r") as f:
             boxes = []
@@ -68,6 +71,13 @@ class SKU110KDataset(torch.utils.data.Dataset):
                 y = lines[i][2]
                 w = lines[i][3]
                 h = lines[i][4]
+
+                if not self.normalize_boxes:
+                    x *= width
+                    y *= height
+                    w *= width
+                    h *= height
+
                 boxes.append([x, y, w, h])
 
         # convert everything into a torch.Tensor

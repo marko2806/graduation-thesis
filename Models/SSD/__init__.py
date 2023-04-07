@@ -1,11 +1,14 @@
 from torchvision.models.detection.ssd import ssd300_vgg16, SSD300_VGG16_Weights,SSDClassificationHead, SSDRegressionHead
-from Models import Model, Preprocesor, Postprocessor
-import torch
-import os
-from torch.utils.data import DataLoader
-import torchvision
-import math
 
+#from Models import Model, Preprocesor, Postprocessor
+#import torch
+#import os
+#from torch.utils.data import DataLoader
+#import torchvision
+#import math
+import torchvision
+import torch
+'''
 class SSD(Model):
     def __init__(self) -> None:
         self.weights = SSD300_VGG16_Weights.COCO_V1
@@ -83,3 +86,13 @@ class SSDPreprocessor(Preprocesor):
 class SSDPostprocessor(Postprocessor):
     def postprocess_output(self, model_output):
         pass
+'''
+if __name__ == "__main__":
+    weights = SSD300_VGG16_Weights.DEFAULT
+    model = torchvision.models.detection.ssd300_vgg16(weights=weights)
+    preprocessing = weights.transforms()
+    print(preprocessing)
+    model.eval()
+    x = [torch.rand(3, 300, 300), torch.rand(3, 500, 400)]
+    predictions = model(x)
+    print(predictions)
