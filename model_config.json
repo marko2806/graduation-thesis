@@ -16,10 +16,10 @@
             "optimizer": "SGD",
             "weight_decay": 0.0005
         },
-        "num_epochs": 10,
+        "num_epochs": 100,
         "batch_size": 16
     },
-    "retina_net":{
+    "retina_net": {
         "optimizer": {
             "learning_rate": 0.005,
             "momentum": 0.9,
@@ -29,7 +29,7 @@
         "num_epochs": 10,
         "batch_size": 16
     },
-    "yolov5":{
+    "yolov5": {
         "optimizer": {
             "learning_rate": 0.005,
             "momentum": 0.9,

@@ -158,3 +158,10 @@ Datasets/SKU110K/labels/train*
 Datasets/SKU110K/labels/val*
 
 runs/*
+
+SKU110K/images/test*
+SKU110K/images/train*
+SKU110K/images/val*
+SKU110K/labels/test*
+SKU110K/labels/train*
+SKU110K/labels/val*
