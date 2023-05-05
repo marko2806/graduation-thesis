@@ -16,12 +16,14 @@ warnings.filterwarnings('ignore')
 # https://github.com/pytorch/vision/tree/main/references/detection
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-sagemaker = True
+sagemaker = False
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-
+    
     # hyperparameters sent by the client are passed as command-line arguments to the script.
+    parser.add_argument('--epoch', type=int, required=False, default=1)
     parser.add_argument('--epochs', type=int, default=50)
     parser.add_argument('--batch-size', type=int, default=1)
     parser.add_argument('--learning-rate', type=float, default=0.005)
@@ -38,11 +40,11 @@ if __name__ == "__main__":
     parser.add_argument('--model-dir', type=str,
                         default=os.environ['SM_MODEL_DIR'] if sagemaker else "./model")
     parser.add_argument('--train', type=str,
-                        default=os.environ['SM_CHANNEL_TRAIN'] if sagemaker else "../SKU110K")
+                        default=os.environ['SM_CHANNEL_TRAIN'] if sagemaker else "../datasets/SKU110K")
     parser.add_argument('--test', type=str,
-                        default=os.environ['SM_CHANNEL_TEST'] if sagemaker else "../SKU110K")
+                        default=os.environ['SM_CHANNEL_TEST'] if sagemaker else "../datasets/SKU110K")
     parser.add_argument('--model', type=str, default=None, required=True)
-
+    parser.add_argument('--model-path', type=str, default=None, required=False)
     args, _ = parser.parse_known_args()
     print("Parsed arguments")
 
@@ -64,6 +66,8 @@ if __name__ == "__main__":
 
     print("Created data loaders")
     model = get_model(model_name=args.model, num_classes=args.num_classes)
+    if args.model_path is not None:
+        model.load_state_dict(torch.load(args.model_path))
     # move model to the GPU if possible
     model.to(DEVICE)
     print(f"Moved model to device: {DEVICE}")
@@ -74,22 +78,21 @@ if __name__ == "__main__":
     print("Constructed an SGD optimizer")
     # and a learning rate scheduler which decreases the learning rate by
     # 10x every 3 epochs
-    lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer,
-                                                   step_size=3,
-                                                   gamma=0.1)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.1)
+                                                   
     print("Created learning rate scheduler")
     # let's train it for 10 epochs
     num_epochs = args.epochs
     print("Starting training")
-    for epoch in range(num_epochs):
-        print("Training epoch: ", epoch)
+    for epoch in range(args.epoch, num_epochs + 1):
+        print("Training epoch: ", epoch, flush=True)
         # train for one epoch, printing every 10 iterations
         train_one_epoch(model, optimizer, data_loader,
                         DEVICE, epoch, print_freq=1)
         # update the learning rate
-        lr_scheduler.step()
+        #lr_scheduler.step()
         # evaluate on the test dataset
         evaluate(model, data_loader_test, device=DEVICE)
 
-        with open(os.path.join(args.model_dir, 'model.pth'), 'wb') as f:
+        with open(os.path.join(args.model_dir, f'model_{args.model}_{epoch}.pth'), 'wb') as f:
             torch.save(model.state_dict(), f)

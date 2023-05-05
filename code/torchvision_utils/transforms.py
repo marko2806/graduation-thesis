@@ -2,7 +2,7 @@ import random
 import torch
 import numpy as np
 from torchvision.transforms import functional as F
-
+import torchvision
 
 def _flip_coco_person_keypoints(kps, width):
     flip_inds = [0, 2, 1, 4, 3, 6, 5, 8, 7, 10, 9, 12, 11, 14, 13, 16, 15]
@@ -30,11 +30,13 @@ class RandomHorizontalFlip(object):
 
     def __call__(self, image, target):
         if random.random() < self.prob:
-            height, width = image.shape[-2:]
-            image = np.fliplr(image)
+            width, height = image.size
+            image = F.hflip(image)
             bbox = target["boxes"]
-            bbox[:, [0, 2]] = width - bbox[:, [2, 0]]
-            target["boxes"] = bbox
+            temp = bbox.clone().detach()
+            temp[:, 0] = width - bbox[:, 2]
+            temp[:, 2] = width - bbox[:, 0]
+            target["boxes"] = temp
             if "masks" in target:
                 target["masks"] = target["masks"].flip(-1)
             if "keypoints" in target:

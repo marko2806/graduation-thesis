@@ -7,8 +7,9 @@ def get_model(num_classes=2):
     # load a model pre-trained on COCO
     model = fasterrcnn_resnet50_fpn_v2(
         weights="DEFAULT",
-        min_size=640,  # min size of resclaed image is 640
-        box_detections_per_img=1000)  # maximum number of detections per images is 1000
+        min_size=500,  # min size of resclaed image is 640
+        max_size=500,
+        box_detections_per_img=750)  # maximum number of detections per images is 1000
 
     print("Loaded FasterRCNN model")
 

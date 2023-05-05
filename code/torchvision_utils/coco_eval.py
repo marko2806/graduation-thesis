@@ -13,7 +13,7 @@ import pycocotools.mask as mask_util
 
 from collections import defaultdict
 
-import utils
+import torchvision_utils.utils as utils
 
 
 class CocoEvaluator(object):
@@ -26,6 +26,7 @@ class CocoEvaluator(object):
         self.coco_eval = {}
         for iou_type in iou_types:
             self.coco_eval[iou_type] = COCOeval(coco_gt, iouType=iou_type)
+            self.coco_eval[iou_type].maxDets = [10, 100, 1000]
 
         self.img_ids = []
         self.eval_imgs = {k: [] for k in iou_types}
@@ -313,7 +314,9 @@ def evaluate(self):
     p.imgIds = list(np.unique(p.imgIds))
     if p.useCats:
         p.catIds = list(np.unique(p.catIds))
+    p.maxDets = [10, 100, 1000]
     p.maxDets = sorted(p.maxDets)
+
     self.params = p
 
     self._prepare()
