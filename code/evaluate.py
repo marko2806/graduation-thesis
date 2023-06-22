@@ -1,5 +1,5 @@
 from torch.utils.data import DataLoader
-from transforms import get_transform
+from transforms import get_transforms
 import torch
 from torchvision_utils.engine import evaluate
 import torchvision_utils.utils as utils
@@ -19,7 +19,7 @@ sagemaker = False
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    
+
     # hyperparameters sent by the client are passed as command-line arguments to the script.
     parser.add_argument('--num-classes', type=int,
                         required=False, default=2)
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     print("Parsed arguments")
 
     dataset_test = SKU110kDataset(
-        args.test, get_transform(train=False), args.mode)
+        args.test, get_transforms(is_train=False), args.mode)
     print(len(dataset_test))
     print("Loaded SKU110K dataset")
 
@@ -58,4 +58,3 @@ if __name__ == "__main__":
     # move model to the GPU if possible
     model.to(DEVICE)
     evaluate(model, data_loader_test, device=DEVICE,)
-

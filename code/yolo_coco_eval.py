@@ -4,7 +4,7 @@ from collections import defaultdict
 from torchvision_utils.engine import evaluate
 from torch.utils.data import DataLoader
 import torchvision_utils.utils as utils
-from transforms import get_transform
+from transforms import get_transforms
 import numpy as np
 import torch
 from torchvision.transforms import functional as F
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     model_coco = YOLO_COCO('./yolov5s.pt')
 
     sku110kDataset = SKU110kDataset(
-        "./SKU110K", get_transform(train=False), "val")
+        "./SKU110K", get_transforms(is_train=False), "val")
     print(len(sku110kDataset))
 
     data_loader = DataLoader(

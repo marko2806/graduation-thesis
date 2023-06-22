@@ -1,0 +1,333 @@
+Parsed arguments
+584
+Loaded SKU110K dataset
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:11:54  model_time: 1.6864 (1.6864)  evaluator_time: 0.4896 (0.4896)  time: 7.3877  data: 5.0691  max mem: 478
+Test:  [100/584]  eta: 0:06:12  model_time: 0.1147 (0.1287)  evaluator_time: 0.4342 (0.4998)  time: 0.7135  data: 0.0220  max mem: 593
+Test:  [200/584]  eta: 0:04:45  model_time: 0.1162 (0.1214)  evaluator_time: 0.4509 (0.5058)  time: 0.7430  data: 0.0209  max mem: 688
+Test:  [300/584]  eta: 0:03:25  model_time: 0.1162 (0.1190)  evaluator_time: 0.4343 (0.4984)  time: 0.6817  data: 0.0165  max mem: 688
+Test:  [400/584]  eta: 0:02:16  model_time: 0.1157 (0.1182)  evaluator_time: 0.4456 (0.5199)  time: 0.9182  data: 0.0200  max mem: 688
+Test:  [500/584]  eta: 0:01:02  model_time: 0.1157 (0.1171)  evaluator_time: 0.4099 (0.5293)  time: 0.6426  data: 0.0188  max mem: 688
+Test:  [583/584]  eta: 0:00:00  model_time: 0.1160 (0.1170)  evaluator_time: 0.4669 (0.5397)  time: 1.0031  data: 0.0185  max mem: 688
+Test: Total time: 0:07:20 (0.7546 s / it)
+Averaged stats: model_time: 0.1160 (0.1170)  evaluator_time: 0.4669 (0.5397)
+Accumulating evaluation results...
+DONE (t=1.30s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.730
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.394
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.153
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.463
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.469
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.225
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.543
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 0:58:55  model_time: 0.2423 (0.2423)  evaluator_time: 0.5702 (0.5702)  time: 6.0533  data: 5.1288  max mem: 688
+Test:  [100/584]  eta: 0:06:31  model_time: 0.1159 (0.1144)  evaluator_time: 0.4699 (0.5533)  time: 0.7597  data: 0.0216  max mem: 688
+Test:  [200/584]  eta: 0:05:05  model_time: 0.1176 (0.1149)  evaluator_time: 0.5104 (0.5655)  time: 0.8116  data: 0.0188  max mem: 688
+Test:  [300/584]  eta: 0:03:40  model_time: 0.1161 (0.1147)  evaluator_time: 0.4811 (0.5570)  time: 0.7419  data: 0.0177  max mem: 688
+Test:  [400/584]  eta: 0:02:26  model_time: 0.1169 (0.1150)  evaluator_time: 0.5228 (0.5800)  time: 0.9970  data: 0.0195  max mem: 688
+Test:  [500/584]  eta: 0:01:07  model_time: 0.1168 (0.1147)  evaluator_time: 0.4559 (0.5901)  time: 0.6885  data: 0.0183  max mem: 688
+Test:  [583/584]  eta: 0:00:00  model_time: 0.1168 (0.1153)  evaluator_time: 0.5079 (0.6025)  time: 1.1492  data: 0.0186  max mem: 688
+Test: Total time: 0:07:56 (0.8154 s / it)
+Averaged stats: model_time: 0.1168 (0.1153)  evaluator_time: 0.5079 (0.6025)
+Accumulating evaluation results...
+DONE (t=1.43s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.747
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.400
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.160
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.471
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.482
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.241
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.555
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 0:58:29  model_time: 0.1930 (0.1930)  evaluator_time: 0.6007 (0.6007)  time: 6.0087  data: 5.1036  max mem: 688
+Test:  [100/584]  eta: 0:06:56  model_time: 0.1155 (0.1140)  evaluator_time: 0.4818 (0.6070)  time: 0.7978  data: 0.0201  max mem: 688
+Test:  [200/584]  eta: 0:05:25  model_time: 0.1166 (0.1143)  evaluator_time: 0.5425 (0.6199)  time: 0.8809  data: 0.0210  max mem: 688
+Test:  [300/584]  eta: 0:03:55  model_time: 0.1173 (0.1144)  evaluator_time: 0.5064 (0.6093)  time: 0.7794  data: 0.0191  max mem: 688
+Test:  [400/584]  eta: 0:02:36  model_time: 0.1169 (0.1150)  evaluator_time: 0.5469 (0.6338)  time: 1.0725  data: 0.0169  max mem: 688
+Test:  [500/584]  eta: 0:01:12  model_time: 0.1159 (0.1149)  evaluator_time: 0.4868 (0.6451)  time: 0.7264  data: 0.0179  max mem: 688
+Test:  [583/584]  eta: 0:00:00  model_time: 0.1169 (0.1155)  evaluator_time: 0.5834 (0.6586)  time: 1.2653  data: 0.0209  max mem: 688
+Test: Total time: 0:08:28 (0.8712 s / it)
+Averaged stats: model_time: 0.1169 (0.1155)  evaluator_time: 0.5834 (0.6586)
+Accumulating evaluation results...
+DONE (t=1.59s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.753
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.399
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.160
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.472
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.485
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.245
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.558
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 0:59:40  model_time: 0.1839 (0.1839)  evaluator_time: 0.6563 (0.6563)  time: 6.1309  data: 5.1794  max mem: 688
+Test:  [100/584]  eta: 0:07:45  model_time: 0.1156 (0.1139)  evaluator_time: 0.5671 (0.7078)  time: 0.8838  data: 0.0226  max mem: 688
+Test:  [200/584]  eta: 0:06:09  model_time: 0.1170 (0.1151)  evaluator_time: 0.6019 (0.7315)  time: 1.0223  data: 0.0149  max mem: 688
+Test:  [300/584]  eta: 0:04:25  model_time: 0.1160 (0.1150)  evaluator_time: 0.5985 (0.7162)  time: 0.8723  data: 0.0165  max mem: 688
+Test:  [400/584]  eta: 0:02:57  model_time: 0.1161 (0.1157)  evaluator_time: 0.6315 (0.7492)  time: 1.2305  data: 0.0177  max mem: 688
+Test:  [500/584]  eta: 0:01:21  model_time: 0.1157 (0.1152)  evaluator_time: 0.5548 (0.7594)  time: 0.8029  data: 0.0190  max mem: 688
+Test:  [583/584]  eta: 0:00:00  model_time: 0.1181 (0.1160)  evaluator_time: 0.6684 (0.7774)  time: 1.5552  data: 0.0186  max mem: 688
+Test: Total time: 0:09:38 (0.9904 s / it)
+Averaged stats: model_time: 0.1181 (0.1160)  evaluator_time: 0.6684 (0.7774)
+Accumulating evaluation results...
+DONE (t=1.94s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.765
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.398
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.161
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.475
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.490
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.253
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.562
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 0:59:49  model_time: 0.2336 (0.2336)  evaluator_time: 0.6829 (0.6829)  time: 6.1464  data: 5.1161  max mem: 688
+Test:  [100/584]  eta: 0:09:13  model_time: 0.1156 (0.1148)  evaluator_time: 0.6639 (0.8881)  time: 1.0368  data: 0.0227  max mem: 688
+Test:  [200/584]  eta: 0:07:23  model_time: 0.1177 (0.1163)  evaluator_time: 0.7709 (0.9253)  time: 1.2515  data: 0.0201  max mem: 688
+Test:  [300/584]  eta: 0:05:18  model_time: 0.1165 (0.1157)  evaluator_time: 0.7524 (0.8996)  time: 1.0239  data: 0.0169  max mem: 688
+Test:  [400/584]  eta: 0:03:32  model_time: 0.1166 (0.1159)  evaluator_time: 0.7260 (0.9367)  time: 1.4706  data: 0.0139  max mem: 688
+Test:  [500/584]  eta: 0:01:37  model_time: 0.1166 (0.1158)  evaluator_time: 0.6693 (0.9513)  time: 0.9453  data: 0.0168  max mem: 688
+Test:  [583/584]  eta: 0:00:01  model_time: 0.1169 (0.1160)  evaluator_time: 0.8261 (0.9762)  time: 1.9439  data: 0.0180  max mem: 688
+Test: Total time: 0:11:34 (1.1884 s / it)
+Averaged stats: model_time: 0.1169 (0.1160)  evaluator_time: 0.8261 (0.9762)
+Accumulating evaluation results...
+DONE (t=2.41s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.778
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.401
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.164
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.478
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.501
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.270
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.571
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:00:11  model_time: 0.1670 (0.1670)  evaluator_time: 0.7449 (0.7449)  time: 6.1846  data: 5.1573  max mem: 688
+Test:  [100/584]  eta: 0:11:03  model_time: 0.1158 (0.1150)  evaluator_time: 0.8276 (1.1160)  time: 1.2111  data: 0.0203  max mem: 688
+Test:  [200/584]  eta: 0:08:55  model_time: 0.1159 (0.1151)  evaluator_time: 0.9682 (1.1646)  time: 1.5118  data: 0.0176  max mem: 688
+Test:  [300/584]  eta: 0:06:24  model_time: 0.1165 (0.1154)  evaluator_time: 0.9344 (1.1353)  time: 1.2556  data: 0.0171  max mem: 688
+Test:  [400/584]  eta: 0:04:16  model_time: 0.1178 (0.1163)  evaluator_time: 0.9276 (1.1786)  time: 1.7931  data: 0.0185  max mem: 688
+Test:  [500/584]  eta: 0:01:58  model_time: 0.1156 (0.1163)  evaluator_time: 0.8377 (1.1921)  time: 1.1206  data: 0.0189  max mem: 688
+Test:  [583/584]  eta: 0:00:01  model_time: 0.1160 (0.1165)  evaluator_time: 1.0596 (1.2170)  time: 2.2480  data: 0.0170  max mem: 688
+Test: Total time: 0:13:55 (1.4298 s / it)
+Averaged stats: model_time: 0.1160 (0.1165)  evaluator_time: 1.0596 (1.2170)
+Accumulating evaluation results...
+DONE (t=3.15s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.786
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.404
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.170
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.484
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.516
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.292
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.584
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:02:23  model_time: 0.2702 (0.2702)  evaluator_time: 0.8914 (0.8914)  time: 6.4105  data: 5.1374  max mem: 688
+Test:  [100/584]  eta: 0:13:16  model_time: 0.1163 (0.1163)  evaluator_time: 1.0791 (1.3893)  time: 1.4817  data: 0.0201  max mem: 688
+Test:  [200/584]  eta: 0:10:39  model_time: 0.1177 (0.1164)  evaluator_time: 1.2549 (1.4355)  time: 1.7673  data: 0.0168  max mem: 688
+Test:  [300/584]  eta: 0:07:44  model_time: 0.1191 (0.1172)  evaluator_time: 1.1436 (1.4126)  time: 1.5409  data: 0.0186  max mem: 688
+Test:  [400/584]  eta: 0:05:08  model_time: 0.1159 (0.1170)  evaluator_time: 1.1589 (1.4611)  time: 2.1038  data: 0.0181  max mem: 688
+Test:  [500/584]  eta: 0:02:22  model_time: 0.1154 (0.1168)  evaluator_time: 1.1135 (1.4802)  time: 1.3770  data: 0.0179  max mem: 688
+Test:  [583/584]  eta: 0:00:01  model_time: 0.1179 (0.1170)  evaluator_time: 1.3039 (1.5043)  time: 2.5333  data: 0.0184  max mem: 688
+Test: Total time: 0:16:43 (1.7176 s / it)
+Averaged stats: model_time: 0.1179 (0.1170)  evaluator_time: 1.3039 (1.5043)
+Accumulating evaluation results...
+DONE (t=3.94s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.784
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.412
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.171
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.489
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.531
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.309
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.599
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:05:28  model_time: 0.2784 (0.2784)  evaluator_time: 1.1186 (1.1186)  time: 6.7261  data: 5.2126  max mem: 688
+Test:  [100/584]  eta: 0:16:19  model_time: 0.1161 (0.1203)  evaluator_time: 1.5178 (1.7630)  time: 1.9169  data: 0.0208  max mem: 688
+Test:  [200/584]  eta: 0:13:09  model_time: 0.1179 (0.1206)  evaluator_time: 1.6872 (1.8224)  time: 2.1955  data: 0.0162  max mem: 688
+Test:  [300/584]  eta: 0:09:35  model_time: 0.1173 (0.1191)  evaluator_time: 1.4878 (1.8019)  time: 1.9343  data: 0.0161  max mem: 688
+Test:  [400/584]  eta: 0:06:19  model_time: 0.1167 (0.1196)  evaluator_time: 1.4611 (1.8424)  time: 2.5133  data: 0.0171  max mem: 688
+Test:  [500/584]  eta: 0:02:55  model_time: 0.1158 (0.1189)  evaluator_time: 1.5661 (1.8710)  time: 1.8053  data: 0.0176  max mem: 688
+Test:  [583/584]  eta: 0:00:02  model_time: 0.1171 (0.1195)  evaluator_time: 1.7750 (1.8933)  time: 2.9127  data: 0.0193  max mem: 688
+Test: Total time: 0:20:31 (2.1093 s / it)
+Averaged stats: model_time: 0.1171 (0.1195)  evaluator_time: 1.7750 (1.8933)
+Accumulating evaluation results...
+DONE (t=5.02s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.774
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.420
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.170
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.491
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.547
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.321
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.616
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:08:09  model_time: 0.2445 (0.2445)  evaluator_time: 1.5112 (1.5112)  time: 7.0026  data: 5.1357  max mem: 688
+Test:  [100/584]  eta: 0:19:42  model_time: 0.1171 (0.1200)  evaluator_time: 1.9552 (2.1829)  time: 2.3605  data: 0.0183  max mem: 688
+Test:  [200/584]  eta: 0:15:56  model_time: 0.1179 (0.1201)  evaluator_time: 2.3498 (2.2581)  time: 2.7711  data: 0.0189  max mem: 688
+Test:  [300/584]  eta: 0:11:34  model_time: 0.1172 (0.1192)  evaluator_time: 1.8673 (2.2224)  time: 2.2571  data: 0.0170  max mem: 688
+Test:  [400/584]  eta: 0:07:35  model_time: 0.1185 (0.1190)  evaluator_time: 2.0396 (2.2572)  time: 2.8801  data: 0.0195  max mem: 688
+Test:  [500/584]  eta: 0:03:30  model_time: 0.1157 (0.1189)  evaluator_time: 2.0331 (2.2865)  time: 2.2378  data: 0.0143  max mem: 688
+Test:  [583/584]  eta: 0:00:02  model_time: 0.1177 (0.1192)  evaluator_time: 2.2337 (2.3042)  time: 3.1894  data: 0.0179  max mem: 688
+Test: Total time: 0:24:31 (2.5198 s / it)
+Averaged stats: model_time: 0.1177 (0.1192)  evaluator_time: 2.2337 (2.3042)
+Accumulating evaluation results...
+DONE (t=6.38s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.750
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.428
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.166
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.487
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.569
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.331
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.641
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:16:26  model_time: 0.2341 (0.2341)  evaluator_time: 2.4283 (2.4283)  time: 7.8539  data: 5.0776  max mem: 688
+Test:  [100/584]  eta: 0:21:02  model_time: 0.1166 (0.1208)  evaluator_time: 2.1466 (2.3475)  time: 2.5545  data: 0.0221  max mem: 688
+Test:  [200/584]  eta: 0:16:50  model_time: 0.1178 (0.1212)  evaluator_time: 2.3524 (2.3965)  time: 2.8628  data: 0.0187  max mem: 688
+Test:  [300/584]  eta: 0:12:16  model_time: 0.1172 (0.1199)  evaluator_time: 2.0602 (2.3687)  time: 2.4458  data: 0.0182  max mem: 688
+Test:  [400/584]  eta: 0:08:04  model_time: 0.1166 (0.1203)  evaluator_time: 2.1973 (2.4115)  time: 3.0602  data: 0.0135  max mem: 688
+Test:  [500/584]  eta: 0:03:43  model_time: 0.1165 (0.1199)  evaluator_time: 2.0909 (2.4379)  time: 2.3651  data: 0.0177  max mem: 688
+Test:  [583/584]  eta: 0:00:02  model_time: 0.1178 (0.1203)  evaluator_time: 2.2973 (2.4543)  time: 3.3521  data: 0.0200  max mem: 688
+Test: Total time: 0:25:59 (2.6711 s / it)
+Averaged stats: model_time: 0.1178 (0.1203)  evaluator_time: 2.2973 (2.4543)
+Accumulating evaluation results...
+DONE (t=7.19s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.654
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.404
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.154
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.443
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.588
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.331
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.666
+Created data loaders
+Loading RetinaNet model
+Loaded RetinaNet model
+loading state dict: ./model/RetinaNet500/model_Retina_Net_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:18:33  model_time: 0.1906 (0.1906)  evaluator_time: 2.5619 (2.5619)  time: 8.0718  data: 5.2063  max mem: 688
+Test:  [100/584]  eta: 0:22:25  model_time: 0.1200 (0.1228)  evaluator_time: 2.3360 (2.5171)  time: 2.7501  data: 0.0211  max mem: 688
+Test:  [200/584]  eta: 0:17:57  model_time: 0.1183 (0.1230)  evaluator_time: 2.4770 (2.5679)  time: 3.0328  data: 0.0186  max mem: 688
+Test:  [300/584]  eta: 0:13:09  model_time: 0.1167 (0.1223)  evaluator_time: 2.4061 (2.5518)  time: 2.6965  data: 0.0176  max mem: 688
+Test:  [400/584]  eta: 0:08:38  model_time: 0.1179 (0.1222)  evaluator_time: 2.4216 (2.5978)  time: 3.2513  data: 0.0181  max mem: 688
+Test:  [500/584]  eta: 0:03:59  model_time: 0.1189 (0.1224)  evaluator_time: 2.2845 (2.6263)  time: 2.5715  data: 0.0207  max mem: 688
+Test:  [583/584]  eta: 0:00:02  model_time: 0.1171 (0.1225)  evaluator_time: 2.4452 (2.6441)  time: 3.5253  data: 0.0186  max mem: 688
+Test: Total time: 0:27:52 (2.8636 s / it)
+Averaged stats: model_time: 0.1171 (0.1225)  evaluator_time: 2.4452 (2.6441)
+Accumulating evaluation results...
+DONE (t=7.47s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.196
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.135
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.105
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.142
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.500
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.243
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.578

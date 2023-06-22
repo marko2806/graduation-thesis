@@ -165,3 +165,4 @@ SKU110K/images/val*
 SKU110K/labels/test*
 SKU110K/labels/train*
 SKU110K/labels/val*
+.DS_Store

@@ -1,0 +1,344 @@
+Parsed arguments
+584
+Loaded SKU110K dataset
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:34:26  model_time: 3.0898 (3.0898)  evaluator_time: 0.5230 (0.5230)  time: 9.7029  data: 5.8875  max mem: 1188
+Test:  [100/584]  eta: 0:12:15  model_time: 0.8710 (0.8444)  evaluator_time: 0.5030 (0.5010)  time: 1.4850  data: 0.0326  max mem: 1245
+Test:  [200/584]  eta: 0:09:55  model_time: 0.8740 (0.8434)  evaluator_time: 0.5040 (0.5510)  time: 1.7002  data: 0.0363  max mem: 1258
+Test:  [300/584]  eta: 0:07:17  model_time: 0.8547 (0.8415)  evaluator_time: 0.4571 (0.5511)  time: 1.4267  data: 0.0261  max mem: 1258
+Test:  [400/584]  eta: 0:04:44  model_time: 0.8564 (0.8407)  evaluator_time: 0.4497 (0.5648)  time: 1.6769  data: 0.0281  max mem: 1258
+Test:  [500/584]  eta: 0:02:09  model_time: 0.8574 (0.8343)  evaluator_time: 0.3955 (0.5703)  time: 1.3923  data: 0.0289  max mem: 1258
+Test:  [583/584]  eta: 0:00:01  model_time: 0.8528 (0.8343)  evaluator_time: 0.4606 (0.5798)  time: 1.8314  data: 0.0268  max mem: 1258
+Test: Total time: 0:15:04 (1.5494 s / it)
+Averaged stats: model_time: 0.8528 (0.8343)  evaluator_time: 0.4606 (0.5798)
+Accumulating evaluation results...
+DONE (t=1.55s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.743
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.429
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.238
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.468
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.484
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.312
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.537
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:17:23  model_time: 0.8830 (0.8830)  evaluator_time: 0.5215 (0.5215)  time: 7.9507  data: 6.4015  max mem: 1258
+Test:  [100/584]  eta: 0:12:20  model_time: 0.8562 (0.8092)  evaluator_time: 0.4786 (0.5351)  time: 1.4542  data: 0.0323  max mem: 1258
+Test:  [200/584]  eta: 0:12:37  model_time: 0.4371 (0.8746)  evaluator_time: 0.5105 (0.5688)  time: 3.8064  data: 0.0257  max mem: 1258
+Test:  [300/584]  eta: 0:12:14  model_time: 0.4029 (0.9535)  evaluator_time: 0.4823 (0.5657)  time: 3.9222  data: 0.0245  max mem: 1258
+Test:  [400/584]  eta: 0:09:01  model_time: 0.4081 (0.9389)  evaluator_time: 0.4982 (0.5920)  time: 4.2163  data: 0.0240  max mem: 1258
+Test:  [500/584]  eta: 0:04:24  model_time: 0.4398 (0.9518)  evaluator_time: 0.4573 (0.6064)  time: 3.7060  data: 0.0239  max mem: 1258
+Test:  [583/584]  eta: 0:00:03  model_time: 0.4155 (1.0250)  evaluator_time: 0.5301 (0.6219)  time: 4.2467  data: 0.0246  max mem: 1258
+Test: Total time: 0:31:47 (3.2665 s / it)
+Averaged stats: model_time: 0.4155 (1.0250)  evaluator_time: 0.5301 (0.6219)
+Accumulating evaluation results...
+DONE (t=1.67s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.770
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.443
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.253
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.482
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.504
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.335
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.555
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:49:17  model_time: 0.3447 (0.3447)  evaluator_time: 0.5500 (0.5500)  time: 11.2291  data: 6.7374  max mem: 1258
+Test:  [100/584]  eta: 0:33:03  model_time: 0.5342 (1.0081)  evaluator_time: 0.5100 (0.5689)  time: 3.9403  data: 0.0275  max mem: 1258
+Test:  [200/584]  eta: 0:25:40  model_time: 0.4226 (1.0128)  evaluator_time: 0.5066 (0.5943)  time: 4.0829  data: 0.0256  max mem: 1258
+Test:  [300/584]  eta: 0:18:58  model_time: 0.4312 (0.9286)  evaluator_time: 0.5051 (0.5865)  time: 3.9017  data: 0.0244  max mem: 1258
+Test:  [400/584]  eta: 0:12:21  model_time: 0.4433 (0.8772)  evaluator_time: 0.5324 (0.6121)  time: 4.2669  data: 0.0248  max mem: 1258
+Test:  [500/584]  eta: 0:05:38  model_time: 0.4425 (0.9192)  evaluator_time: 0.4749 (0.6251)  time: 3.7619  data: 0.0241  max mem: 1258
+Test:  [583/584]  eta: 0:00:04  model_time: 0.4695 (0.9448)  evaluator_time: 0.5168 (0.6395)  time: 4.2472  data: 0.0259  max mem: 1258
+Test: Total time: 0:39:12 (4.0280 s / it)
+Averaged stats: model_time: 0.4695 (0.9448)  evaluator_time: 0.5168 (0.6395)
+Accumulating evaluation results...
+DONE (t=1.64s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.778
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.443
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.254
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.482
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.505
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.337
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.556
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:59:52  model_time: 0.3146 (0.3146)  evaluator_time: 0.5588 (0.5588)  time: 12.3164  data: 6.4026  max mem: 1258
+Test:  [100/584]  eta: 0:33:24  model_time: 0.3611 (0.9433)  evaluator_time: 0.5262 (0.5879)  time: 4.1248  data: 0.0292  max mem: 1258
+Test:  [200/584]  eta: 0:26:10  model_time: 0.4217 (1.0424)  evaluator_time: 0.5062 (0.6135)  time: 4.0247  data: 0.0239  max mem: 1258
+Test:  [300/584]  eta: 0:19:18  model_time: 0.3840 (1.0209)  evaluator_time: 0.5930 (0.6068)  time: 4.5096  data: 0.0298  max mem: 1258
+Test:  [400/584]  eta: 0:12:37  model_time: 0.4042 (0.9928)  evaluator_time: 0.5670 (0.6319)  time: 4.5008  data: 0.0238  max mem: 1258
+Test:  [500/584]  eta: 0:05:43  model_time: 0.4627 (1.0129)  evaluator_time: 0.4917 (0.6434)  time: 3.9490  data: 0.0236  max mem: 1258
+Test:  [583/584]  eta: 0:00:04  model_time: 0.4392 (1.0471)  evaluator_time: 0.5095 (0.6556)  time: 4.4025  data: 0.0250  max mem: 1258
+Test: Total time: 0:39:47 (4.0888 s / it)
+Averaged stats: model_time: 0.4392 (1.0471)  evaluator_time: 0.5095 (0.6556)
+Accumulating evaluation results...
+DONE (t=1.67s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.778
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.443
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.255
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.484
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.507
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.338
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.558
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:42:57  model_time: 0.3981 (0.3981)  evaluator_time: 0.5404 (0.5404)  time: 10.5775  data: 6.3581  max mem: 1258
+Test:  [100/584]  eta: 0:33:42  model_time: 0.3880 (0.8548)  evaluator_time: 0.5175 (0.6166)  time: 4.0429  data: 0.0284  max mem: 1258
+Test:  [200/584]  eta: 0:26:09  model_time: 0.4339 (0.7934)  evaluator_time: 0.5527 (0.6371)  time: 4.0667  data: 0.0261  max mem: 1258
+Test:  [300/584]  eta: 0:19:16  model_time: 0.4042 (0.7512)  evaluator_time: 0.5248 (0.6312)  time: 4.2724  data: 0.0240  max mem: 1258
+Test:  [400/584]  eta: 0:12:30  model_time: 0.4365 (0.8312)  evaluator_time: 0.5758 (0.6550)  time: 4.2579  data: 0.0247  max mem: 1258
+Test:  [500/584]  eta: 0:05:43  model_time: 0.4156 (0.7962)  evaluator_time: 0.5120 (0.6671)  time: 4.1028  data: 0.0242  max mem: 1258
+Test:  [583/584]  eta: 0:00:04  model_time: 0.4009 (0.8037)  evaluator_time: 0.5419 (0.6785)  time: 4.2318  data: 0.0253  max mem: 1258
+Test: Total time: 0:39:44 (4.0839 s / it)
+Averaged stats: model_time: 0.4009 (0.8037)  evaluator_time: 0.5419 (0.6785)
+Accumulating evaluation results...
+DONE (t=1.76s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.778
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.443
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.255
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.485
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.509
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.340
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.560
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:39:03  model_time: 0.3968 (0.3968)  evaluator_time: 0.5591 (0.5591)  time: 10.1780  data: 6.3724  max mem: 1258
+Test:  [100/584]  eta: 0:32:34  model_time: 0.3975 (0.6935)  evaluator_time: 0.5862 (0.6212)  time: 4.0140  data: 0.0284  max mem: 1258
+Test:  [200/584]  eta: 0:26:09  model_time: 0.3918 (0.7740)  evaluator_time: 0.5692 (0.6501)  time: 4.1700  data: 0.0252  max mem: 1258
+Test:  [300/584]  eta: 0:19:17  model_time: 0.4072 (0.7246)  evaluator_time: 0.5570 (0.6416)  time: 4.0858  data: 0.0245  max mem: 1258
+Test:  [400/584]  eta: 0:12:28  model_time: 0.3856 (0.7325)  evaluator_time: 0.5741 (0.6660)  time: 4.3505  data: 0.0243  max mem: 1258
+Test:  [500/584]  eta: 0:05:33  model_time: 0.3533 (0.7419)  evaluator_time: 0.5072 (0.6770)  time: 2.1631  data: 0.0223  max mem: 1258
+Test:  [583/584]  eta: 0:00:03  model_time: 0.3067 (0.6978)  evaluator_time: 0.4453 (0.6682)  time: 1.1981  data: 0.0201  max mem: 1258
+Test: Total time: 0:34:51 (3.5815 s / it)
+Averaged stats: model_time: 0.3067 (0.6978)  evaluator_time: 0.4453 (0.6682)
+Accumulating evaluation results...
+DONE (t=1.43s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.785
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.448
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.256
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.488
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.512
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.342
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.564
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 0:59:06  model_time: 0.3869 (0.3869)  evaluator_time: 0.4548 (0.4548)  time: 6.0727  data: 5.1172  max mem: 1258
+Test:  [100/584]  eta: 0:07:30  model_time: 0.3066 (0.3012)  evaluator_time: 0.4403 (0.4909)  time: 0.8882  data: 0.0230  max mem: 1258
+Test:  [200/584]  eta: 0:05:55  model_time: 0.3060 (0.3019)  evaluator_time: 0.4446 (0.5108)  time: 0.9745  data: 0.0172  max mem: 1258
+Test:  [300/584]  eta: 0:04:18  model_time: 0.3067 (0.3022)  evaluator_time: 0.4530 (0.5030)  time: 0.8729  data: 0.0176  max mem: 1258
+Test:  [400/584]  eta: 0:02:50  model_time: 0.3062 (0.3030)  evaluator_time: 0.4804 (0.5215)  time: 1.0836  data: 0.0175  max mem: 1258
+Test:  [500/584]  eta: 0:01:18  model_time: 0.3057 (0.3024)  evaluator_time: 0.4030 (0.5323)  time: 0.8338  data: 0.0197  max mem: 1258
+Test:  [583/584]  eta: 0:00:00  model_time: 0.3061 (0.3028)  evaluator_time: 0.4535 (0.5403)  time: 1.1905  data: 0.0179  max mem: 1258
+Test: Total time: 0:09:08 (0.9393 s / it)
+Averaged stats: model_time: 0.3061 (0.3028)  evaluator_time: 0.4535 (0.5403)
+Accumulating evaluation results...
+DONE (t=1.38s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.785
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.448
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.257
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.491
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.515
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.343
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.567
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:00:01  model_time: 0.4675 (0.4675)  evaluator_time: 0.4452 (0.4452)  time: 6.1670  data: 5.1402  max mem: 1258
+Test:  [100/584]  eta: 0:07:46  model_time: 0.3056 (0.3019)  evaluator_time: 0.4631 (0.5222)  time: 0.9143  data: 0.0199  max mem: 1258
+Test:  [200/584]  eta: 0:06:07  model_time: 0.3070 (0.3029)  evaluator_time: 0.4678 (0.5413)  time: 1.0110  data: 0.0188  max mem: 1258
+Test:  [300/584]  eta: 0:04:27  model_time: 0.3061 (0.3028)  evaluator_time: 0.4713 (0.5336)  time: 0.8968  data: 0.0188  max mem: 1258
+Test:  [400/584]  eta: 0:02:55  model_time: 0.3072 (0.3035)  evaluator_time: 0.4912 (0.5507)  time: 1.1083  data: 0.0172  max mem: 1258
+Test:  [500/584]  eta: 0:01:20  model_time: 0.3062 (0.3028)  evaluator_time: 0.4379 (0.5610)  time: 0.8531  data: 0.0176  max mem: 1258
+Test:  [583/584]  eta: 0:00:00  model_time: 0.3073 (0.3033)  evaluator_time: 0.4900 (0.5697)  time: 1.2291  data: 0.0185  max mem: 1258
+Test: Total time: 0:09:25 (0.9690 s / it)
+Averaged stats: model_time: 0.3073 (0.3033)  evaluator_time: 0.4900 (0.5697)
+Accumulating evaluation results...
+DONE (t=1.45s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.784
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.453
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.257
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.492
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.519
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.344
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.572
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:00:39  model_time: 0.4566 (0.4566)  evaluator_time: 0.4540 (0.4540)  time: 6.2329  data: 5.2113  max mem: 1258
+Test:  [100/584]  eta: 0:08:08  model_time: 0.3047 (0.3016)  evaluator_time: 0.4801 (0.5651)  time: 0.9494  data: 0.0201  max mem: 1258
+Test:  [200/584]  eta: 0:06:26  model_time: 0.3060 (0.3021)  evaluator_time: 0.5286 (0.5906)  time: 1.0669  data: 0.0187  max mem: 1258
+Test:  [300/584]  eta: 0:04:41  model_time: 0.3059 (0.3022)  evaluator_time: 0.5198 (0.5854)  time: 0.9493  data: 0.0187  max mem: 1258
+Test:  [400/584]  eta: 0:03:05  model_time: 0.3059 (0.3029)  evaluator_time: 0.5539 (0.6038)  time: 1.1680  data: 0.0167  max mem: 1258
+Test:  [500/584]  eta: 0:01:25  model_time: 0.3059 (0.3024)  evaluator_time: 0.4906 (0.6144)  time: 0.9006  data: 0.0174  max mem: 1258
+Test:  [583/584]  eta: 0:00:01  model_time: 0.3070 (0.3032)  evaluator_time: 0.5572 (0.6222)  time: 1.2869  data: 0.0191  max mem: 1258
+Test: Total time: 0:09:56 (1.0221 s / it)
+Averaged stats: model_time: 0.3070 (0.3032)  evaluator_time: 0.5572 (0.6222)
+Accumulating evaluation results...
+DONE (t=1.59s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.776
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.454
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.257
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.490
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.525
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.347
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.579
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:00:10  model_time: 0.3526 (0.3526)  evaluator_time: 0.5521 (0.5521)  time: 6.1827  data: 5.1631  max mem: 1258
+Test:  [100/584]  eta: 0:09:26  model_time: 0.3050 (0.3008)  evaluator_time: 0.6333 (0.7292)  time: 1.1049  data: 0.0201  max mem: 1258
+Test:  [200/584]  eta: 0:07:31  model_time: 0.3070 (0.3025)  evaluator_time: 0.7468 (0.7600)  time: 1.2811  data: 0.0173  max mem: 1258
+Test:  [300/584]  eta: 0:05:30  model_time: 0.3061 (0.3024)  evaluator_time: 0.6879 (0.7560)  time: 1.1108  data: 0.0158  max mem: 1258
+Test:  [400/584]  eta: 0:03:37  model_time: 0.3066 (0.3029)  evaluator_time: 0.7281 (0.7775)  time: 1.3362  data: 0.0159  max mem: 1258
+Test:  [500/584]  eta: 0:01:40  model_time: 0.3060 (0.3029)  evaluator_time: 0.6286 (0.7906)  time: 1.0446  data: 0.0166  max mem: 1258
+Test:  [583/584]  eta: 0:00:01  model_time: 0.3059 (0.3035)  evaluator_time: 0.7308 (0.7991)  time: 1.4764  data: 0.0170  max mem: 1258
+Test: Total time: 0:11:39 (1.1985 s / it)
+Averaged stats: model_time: 0.3059 (0.3035)  evaluator_time: 0.7308 (0.7991)
+Accumulating evaluation results...
+DONE (t=2.22s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.681
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.422
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.253
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.440
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.541
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.351
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.599
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN500/model_10.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 1:03:12  model_time: 0.3699 (0.3699)  evaluator_time: 0.9120 (0.9120)  time: 6.4939  data: 5.0980  max mem: 1258
+Test:  [100/584]  eta: 0:12:10  model_time: 0.3053 (0.3015)  evaluator_time: 0.9865 (1.0692)  time: 1.4381  data: 0.0204  max mem: 1258
+Test:  [200/584]  eta: 0:09:45  model_time: 0.3060 (0.3033)  evaluator_time: 1.0884 (1.1072)  time: 1.6429  data: 0.0180  max mem: 1258
+Test:  [300/584]  eta: 0:07:06  model_time: 0.3064 (0.3031)  evaluator_time: 0.9964 (1.0949)  time: 1.4345  data: 0.0152  max mem: 1258
+Test:  [400/584]  eta: 0:04:39  model_time: 0.3064 (0.3040)  evaluator_time: 1.1032 (1.1167)  time: 1.6840  data: 0.0142  max mem: 1258
+Test:  [500/584]  eta: 0:02:08  model_time: 0.3068 (0.3037)  evaluator_time: 0.8629 (1.1303)  time: 1.3417  data: 0.0171  max mem: 1258
+Test:  [583/584]  eta: 0:00:01  model_time: 0.3066 (0.3042)  evaluator_time: 1.0487 (1.1414)  time: 1.9009  data: 0.0205  max mem: 1258
+Test: Total time: 0:15:00 (1.5414 s / it)
+Averaged stats: model_time: 0.3066 (0.3042)  evaluator_time: 1.0487 (1.1414)
+Accumulating evaluation results...
+DONE (t=3.24s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.557
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.362
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.245
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.368
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.552
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.353
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.612

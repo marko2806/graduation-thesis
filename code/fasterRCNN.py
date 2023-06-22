@@ -1,11 +1,12 @@
 from torchvision.models.detection import fasterrcnn_resnet50_fpn_v2, fasterrcnn_mobilenet_v3_large_fpn
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from sku110k_dataset import SKU110kDataset
-from transforms import get_transform
+from transforms import get_transforms
 from torch.utils.data import DataLoader
 import torchvision_utils.utils as utils
 from torchvision_utils.engine import evaluate
 import torch
+
 
 def get_model(num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thesh=0.5):
     print("Loading FasterRCNN model")
@@ -33,12 +34,14 @@ def get_model(num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thes
 
     return model
 
+
 if __name__ == "__main__":
     model = get_model()
     model.load_state_dict(torch.load("./model/faster_rcnn_10.pth"))
     model.eval()
     model = model.to("cuda")
-    dataset = SKU110kDataset("./datasets/SKU110K", get_transform(train=False), "val")
+    dataset = SKU110kDataset("./datasets/SKU110K",
+                             get_transforms(is_train=False), "val")
     data_loader = DataLoader(
         dataset, batch_size=1, shuffle=False, num_workers=4,
         collate_fn=utils.collate_fn)

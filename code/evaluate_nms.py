@@ -1,5 +1,5 @@
 from torch.utils.data import DataLoader
-from transforms import get_transform
+from transforms import get_transforms
 import torch
 from torchvision_utils.engine import evaluate
 import torchvision_utils.utils as utils
@@ -21,7 +21,7 @@ sagemaker = False
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    
+
     # hyperparameters sent by the client are passed as command-line arguments to the script.
     parser.add_argument('--num-classes', type=int,
                         required=False, default=2)
@@ -37,7 +37,7 @@ if __name__ == "__main__":
     print("Parsed arguments")
 
     dataset_test = SKU110kDataset(
-        args.test, get_transform(train=False), "val")
+        args.test, get_transforms(is_train=False), "val")
     print(len(dataset_test))
     print("Loaded SKU110K dataset")
 
@@ -49,9 +49,10 @@ if __name__ == "__main__":
     for i in np.arange(0.0, 1.01, 0.1):
         print("Created data loaders")
         if args.model != "YOLO":
-            model = get_model(model_name=args.model, num_classes=args.num_classes, iou_thresh=i)
+            model = get_model(model_name=args.model,
+                              num_classes=args.num_classes, iou_thresh=i)
             model.to(DEVICE)
-            
+
             if args.model_path is not None:
                 print("loading state dict:", args.model_path)
                 model.load_state_dict(torch.load(args.model_path))
@@ -63,7 +64,3 @@ if __name__ == "__main__":
             model = YOLO_COCO(model_path, iou_thresh=i)
 
             evaluate(model, data_loader_test, DEVICE)
-
-
-        
-

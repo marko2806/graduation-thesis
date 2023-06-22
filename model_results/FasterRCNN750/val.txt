@@ -1,0 +1,34 @@
+Parsed arguments
+584
+Loaded SKU110K dataset
+Created data loaders
+Loading FasterRCNN model
+Loaded FasterRCNN model
+Replaced classifier module with a new module
+loading state dict: ./model/FasterRCNN750/model_Faster_RCNN_5.pth
+creating index...
+index created!
+Test:  [  0/584]  eta: 2:09:11  model_time: 5.9803 (5.9803)  evaluator_time: 0.5940 (0.5940)  time: 13.2729  data: 6.5019  max mem: 1188
+Test:  [100/584]  eta: 0:11:17  model_time: 0.6360 (0.6611)  evaluator_time: 0.4670 (0.5473)  time: 1.2750  data: 0.0340  max mem: 1245
+Test:  [200/584]  eta: 0:08:41  model_time: 0.6380 (0.6414)  evaluator_time: 0.4940 (0.5584)  time: 1.3576  data: 0.0304  max mem: 1258
+Test:  [300/584]  eta: 0:06:18  model_time: 0.6350 (0.6340)  evaluator_time: 0.5160 (0.5541)  time: 1.2899  data: 0.0296  max mem: 1258
+Test:  [400/584]  eta: 0:04:08  model_time: 0.6390 (0.6326)  evaluator_time: 0.5140 (0.5767)  time: 1.5139  data: 0.0314  max mem: 1258
+Test:  [500/584]  eta: 0:01:54  model_time: 0.6400 (0.6282)  evaluator_time: 0.4610 (0.5920)  time: 1.2353  data: 0.0311  max mem: 1258
+Test:  [583/584]  eta: 0:00:01  model_time: 0.6350 (0.6276)  evaluator_time: 0.5090 (0.6028)  time: 1.6685  data: 0.0330  max mem: 1258
+Test: Total time: 0:13:18 (1.3677 s / it)
+Averaged stats: model_time: 0.6350 (0.6276)  evaluator_time: 0.5090 (0.6028)
+Accumulating evaluation results...
+DONE (t=1.73s).
+IoU metric: bbox
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = -1.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.817
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.522
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.269
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.541
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.542
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.324
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.609
