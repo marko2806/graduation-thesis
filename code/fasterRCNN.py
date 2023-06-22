@@ -18,6 +18,9 @@ def get_model(num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thes
         box_nms_thresh=iou_thesh,
         trainable_backbone_layers=0 if freeze_backbone else None)  # maximum number of detections per images is 1000
 
+    for param in model.backbone.parameters():
+        param.requires_grad = False
+
     print("Loaded FasterRCNN model")
 
     # replace the classifier with a new one, that has NUM_CLASSES which is user-defined

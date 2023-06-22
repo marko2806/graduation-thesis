@@ -1,7 +1,7 @@
-
-train: C:/Users/marko/Documents/GitHub/graduation-thesis/datasets/SKU110K/images/train  # train images (relative to 'path') 128 images
-val: C:/Users/marko/Documents/GitHub/graduation-thesis/datasets/SKU110K/images/val  # val images (relative to 'path') 128 images
-test: C:/Users/marko/Documents/GitHub/graduation-thesis/datasets/SKU110K/images/test # test images (optional)
+path: ../../SKU110K  # dataset root dir
+train: images/train  # train images (relative to 'path') 128 images
+val: images/val  # val images (relative to 'path') 128 images
+test: images/test # test images (optional)
 
 # Classes
 names:

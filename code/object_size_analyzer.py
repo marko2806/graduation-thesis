@@ -24,3 +24,12 @@ for i in range(len(dataset)):
 print("Small objects:", small_object_count)
 print("Medium objects:", medium_object_count)
 print("Large objects:", large_object_count)
+
+# Val
+# Small objects: 25
+# Medium objects: 21052
+# Large objects: 69379
+# Test
+# Small objects: 0
+# Medium objects: 0
+# Large objects: 0
