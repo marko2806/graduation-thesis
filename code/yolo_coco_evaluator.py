@@ -22,8 +22,9 @@ def convert_yolov5_to_coco(yolov5_output):
 
 
 class YOLO_COCO(YOLO):
-    def __init__(self, model='yolov8n.pt', task=None, session=None) -> None:
-        super().__init__(model, task, session)
+    def __init__(self, model='yolov8n.pt', task=None, session=None, iou_thresh = 0.7) -> None:
+        super().__init__(model, task)
+        self.iou_thresh = iou_thresh
 
     def __call__(self, source=None, stream=False, **kwargs):
         if isinstance(source, torch.Tensor):
@@ -32,8 +33,8 @@ class YOLO_COCO(YOLO):
             source = [F.to_pil_image(x) for x in source]
         except:
             pass
-        yolo_output = super().__call__(source[0], stream, **kwargs)
 
+        yolo_output = super().__call__(source[0], stream, iou=self.iou_thresh, **kwargs)
         result = [convert_yolov5_to_coco(x) for x in yolo_output]
         return result
 

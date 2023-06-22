@@ -45,14 +45,18 @@ if __name__ == "__main__":
                         default=os.environ['SM_CHANNEL_TEST'] if sagemaker else "../datasets/SKU110K")
     parser.add_argument('--model', type=str, default=None, required=True)
     parser.add_argument('--model-path', type=str, default=None, required=False)
+    parser.add_argument('--freeze-backbone', type=bool, default=None, required=False)
+    parser.add_argument('--use-augmentation', type=bool, default=None, required=False)
+
     args, _ = parser.parse_known_args()
     print("Parsed arguments")
 
-    dataset = SKU110kDataset(args.train,
-                             get_transform(train=True), "train")
-    dataset_test = SKU110kDataset(
-        args.train, get_transform(train=False), "val")
-
+    train_transform = get_transform(train=False)# if args.use_augmentation else None
+    test_transform = get_transform(train=False) #if args.use_augmentation else None
+    dataset = SKU110kDataset(args.train, train_transform, "train")
+    dataset_test = SKU110kDataset(args.train, test_transform, "val")
+    print(len(dataset))
+    print(len(dataset_test))
     print("Loaded SKU110K dataset")
 
     # define training and validation data loaders
@@ -65,7 +69,7 @@ if __name__ == "__main__":
         collate_fn=utils.collate_fn)
 
     print("Created data loaders")
-    model = get_model(model_name=args.model, num_classes=args.num_classes)
+    model = get_model(model_name=args.model, num_classes=args.num_classes, freeze_backbone=args.freeze_backbone)
     if args.model_path is not None:
         model.load_state_dict(torch.load(args.model_path))
     # move model to the GPU if possible
@@ -78,7 +82,7 @@ if __name__ == "__main__":
     print("Constructed an SGD optimizer")
     # and a learning rate scheduler which decreases the learning rate by
     # 10x every 3 epochs
-    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.1)
+    lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=2, gamma=0.1)
                                                    
     print("Created learning rate scheduler")
     # let's train it for 10 epochs
@@ -90,7 +94,7 @@ if __name__ == "__main__":
         train_one_epoch(model, optimizer, data_loader,
                         DEVICE, epoch, print_freq=1)
         # update the learning rate
-        #lr_scheduler.step()
+        lr_scheduler.step()
         # evaluate on the test dataset
         evaluate(model, data_loader_test, device=DEVICE)
 
