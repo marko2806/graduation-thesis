@@ -1,0 +1,4 @@
+Parsed arguments
+Loaded SKU110K dataset
+Created data loaders
+Loading SSD model

@@ -148,7 +148,10 @@ def convert_to_coco_api(ds):
     ann_id = 0
     dataset = {'images': [], 'categories': [], 'annotations': []}
     categories = set()
+    print("Creating index")
     for img_idx in range(len(ds)):
+        if(img_idx % 100) == 0:
+            print(img_idx)
         # find better way to get target
         # targets = ds.get_annotations(img_idx)
         img, targets = ds[img_idx]
