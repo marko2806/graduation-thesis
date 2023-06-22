@@ -7,7 +7,9 @@ from sku110k_dataset import SKU110kDataset
 import os
 import argparse
 from model import get_model
+import numpy as np
 from yolo_coco_evaluator import YOLO_COCO
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -31,12 +33,11 @@ if __name__ == "__main__":
                         default=os.environ['SM_CHANNEL_TEST'] if sagemaker else "../datasets/SKU110K")
     parser.add_argument('--model', type=str, default=None, required=True)
     parser.add_argument('--model-path', type=str, default=None, required=False)
-    parser.add_argument('--mode', type=str, default="test", required=False)
     args, _ = parser.parse_known_args()
     print("Parsed arguments")
 
     dataset_test = SKU110kDataset(
-        args.test, get_transform(train=False), args.mode)
+        args.test, get_transform(train=False), "val")
     print(len(dataset_test))
     print("Loaded SKU110K dataset")
 
@@ -45,17 +46,24 @@ if __name__ == "__main__":
         dataset_test, batch_size=1, shuffle=False, num_workers=1,
         collate_fn=utils.collate_fn)
 
-    print("Created data loaders")
-    if args.model != "YOLO":
-        model = get_model(model_name=args.model, num_classes=args.num_classes)
-    else:
-        print(args.model_path)
-        model_path = args.model_path
-        model = YOLO_COCO(model_path)
-    if args.model_path is not None and args.model != "YOLO":
-        print("loading state dict:", args.model_path)
-        model.load_state_dict(torch.load(args.model_path))
-    # move model to the GPU if possible
-    model.to(DEVICE)
-    evaluate(model, data_loader_test, device=DEVICE,)
+    for i in np.arange(0.0, 1.01, 0.1):
+        print("Created data loaders")
+        if args.model != "YOLO":
+            model = get_model(model_name=args.model, num_classes=args.num_classes, iou_thresh=i)
+            model.to(DEVICE)
+            
+            if args.model_path is not None:
+                print("loading state dict:", args.model_path)
+                model.load_state_dict(torch.load(args.model_path))
+
+            evaluate(model, data_loader_test, device=DEVICE,)
+        else:
+            print(args.model_path)
+            model_path = args.model_path
+            model = YOLO_COCO(model_path, iou_thresh=i)
+
+            evaluate(model, data_loader_test, DEVICE)
+
+
+        
 

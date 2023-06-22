@@ -1,15 +1,17 @@
-from torchvision.models.detection import fasterrcnn_resnet50_fpn_v2
+from torchvision.models.detection import fasterrcnn_resnet50_fpn_v2, fasterrcnn_mobilenet_v3_large_fpn
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
 
-def get_model(num_classes=2):
+def get_model(num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thesh=0.5):
     print("Loading FasterRCNN model")
     # load a model pre-trained on COCO
     model = fasterrcnn_resnet50_fpn_v2(
         weights="DEFAULT",
-        min_size=500,  # min size of resclaed image is 640
-        max_size=500,
-        box_detections_per_img=750)  # maximum number of detections per images is 1000
+        min_size=1000,  # min size of resclaed image is 640
+        max_size=1000,
+        box_detections_per_img=1000,
+        box_nms_thresh=iou_thesh,
+        trainable_backbone_layers=0 if freeze_backbone else None)  # maximum number of detections per images is 1000
 
     print("Loaded FasterRCNN model")
 
