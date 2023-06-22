@@ -102,4 +102,26 @@ if __name__ == "__main__":
     print("Normal objects count: ", normal_count)
     print("Small objects count: ", small_count)
 
-    image = dataset[0]
+    dataset = SKU110kDataset("../datasets/SKU110K", transforms, "test", False)
+    
+    large_count = 0
+    normal_count = 0
+    small_count = 0
+
+    for i in range(0, len(dataset)):
+        image, target = dataset.__getitem__(i, False)
+        for j in range(0, target["boxes"].shape[0]):
+            print(i)
+            label = target["boxes"][j]
+            area = (int(label[3]) - int(label[1])) * \
+                (int(label[2]) - int(label[0]))
+            if area < 32 * 32:
+                small_count += 1
+            elif area > 96 * 96:
+                large_count += 1
+            else:
+                normal_count += 1
+
+    print("Large objects count: ", large_count)
+    print("Normal objects count: ", normal_count)
+    print("Small objects count: ",small_count)

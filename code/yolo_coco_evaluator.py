@@ -33,8 +33,8 @@ class YOLO_COCO(YOLO):
             source = [F.to_pil_image(x) for x in source]
         except:
             pass
-        yolo_output = super().__call__(source[0], stream, iou=self.iou_thresh, **kwargs)
 
+        yolo_output = super().__call__(source[0], stream, iou=self.iou_thresh, **kwargs)
         result = [convert_yolov5_to_coco(x) for x in yolo_output]
         return result
 
