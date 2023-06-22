@@ -7,7 +7,7 @@ import math
 def get_model(num_classes=2):
     print("Loading RetinaNet model")
     model = retinanet_resnet50_fpn_v2(
-        weights="COCO_V1", min_size=500, max_size=500, detections_per_img=1000, topk_candidates=3000)
+        weights="COCO_V1", min_size=1000, max_size=1000, detections_per_img=1000, topk_candidates=3000)
     # replace classification layer
     # in_features = model.head.classification_head.conv[0].in_channels
     # replace classification layer 

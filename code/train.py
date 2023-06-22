@@ -16,7 +16,7 @@ warnings.filterwarnings('ignore')
 # https://github.com/pytorch/vision/tree/main/references/detection
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-sagemaker = False
+sagemaker = True
 
 
 if __name__ == "__main__":
