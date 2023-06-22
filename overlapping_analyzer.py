@@ -4,15 +4,16 @@ import matplotlib.pyplot as plt
 from itertools import permutations
 from utils import calculate_iou, cxcywh_2_xtytxbyb
 
+
 def list_files(path):
-    train_object_ious, val_object_ious, test_object_ious = [],[],[]
+    train_object_ious, val_object_ious, test_object_ious = [], [], []
     # Iterate through all files and folders in the given path
     for root, dirs, files in os.walk(path):
         # Iterate through all files in the current folder
         for file in files:
             # Print the absolute path of each file
             if file.endswith(".txt"):
-                print(file)
+                # print(file)
                 with open(os.path.abspath(os.path.join(root, file)), "r") as f:
                     objects = [x.split(" ")[1:] for x in f.readlines()]
                     for object in objects:
@@ -27,6 +28,14 @@ def list_files(path):
                         obj2 = cxcywh_2_xtytxbyb(obj2)
 
                         iou = calculate_iou(obj1, obj2)
+                        if iou > 0.95:
+                            if "train" in file:
+                                print("Train")
+                            elif "val" in file:
+                                print("Val")
+                            else:
+                                print("Test")
+                            print("Duplicate object found:", obj1, obj2)
                         if iou > max_iou:
                             max_iou = iou
                     if "train" in file:
@@ -37,9 +46,11 @@ def list_files(path):
                         test_object_ious.append(max_iou)
     return np.array(train_object_ious), np.array(val_object_ious), np.array(test_object_ious)
 
+
 if __name__ == "__main__":
     # Call the function with the path of the folder you want to list files for
-    train_object_ious, val_object_ious, test_object_ious = list_files("./Datasets/SKU110K/labels")
+    train_object_ious, val_object_ious, test_object_ious = list_files(
+        "./SKU110K/labels")
 
     fix, axs = plt.subplots(1, 3)
     axs[0].set_title("Train")

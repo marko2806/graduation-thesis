@@ -9,12 +9,13 @@ import cv2
 
 
 class SKU110kDataset(Dataset):
-    def __init__(self, root, transforms, type="train", normalize_boxes=False) -> None:
+    def __init__(self, root, transforms, type="train", normalize_boxes=False, return_path=False) -> None:
         self.root = root
         self.transforms = transforms
         self.images = list()
         self.labels = list()
         self.normalize_boxes = normalize_boxes
+        self.return_path = return_path
         for root, dirs, files in os.walk(root):
             # Iterate through all files in the current folder
             for file in files:
@@ -25,6 +26,7 @@ class SKU110kDataset(Dataset):
                         self.images.append(os.path.join(root, file))
         self.images = sorted(self.images)
         self.labels = sorted(self.labels)
+
         assert (len(self.images) == len(self.labels))
 
     def __getitem__(self, index):
@@ -77,7 +79,8 @@ class SKU110kDataset(Dataset):
 
         if self.transforms is not None:
             image, target = self.transforms(image, target)
-
+        if self.return_path:
+            return img_path, target
         return image, target
 
     def __len__(self):
@@ -86,5 +89,24 @@ class SKU110kDataset(Dataset):
 
 if __name__ == "__main__":
     dataset = SKU110kDataset("./SKU110K", None, "train", False)
+
+    large_count = 0
+    normal_count = 0
+    small_count = 0
+
+    for i in range(0, len(dataset)):
+        label = dataset.__getitem__(i, False)
+        area = (int(label[3]) - int(label[1])) * \
+            (int(label[4]) - int(label[2]))
+        if area < 32 * 32:
+            small_count += 1
+        elif area > 96 * 96:
+            large_count += 1
+        else:
+            normal_count += 1
+
+    print("Large objects count: ", large_count)
+    print("Normal objects count: ", normal_count)
+    print("Small objects count: ", small_count)
 
     image = dataset[0]
