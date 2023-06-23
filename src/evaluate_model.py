@@ -1,34 +1,35 @@
 from torch.utils.data import DataLoader
-from transforms import get_transforms
+from image_transforms import get_transforms
 import torch
 from torchvision_utils.engine import evaluate
 import torchvision_utils.utils as utils
-from sku110k_dataset import SKU110kDataset
+from dataset.sku110k_dataset import SKU110kDataset
 import os
 import argparse
-from model import get_model
-from yolo_coco_evaluator import YOLO_COCO
+from model import YOLO_COCO
 import warnings
+import importlib
 warnings.filterwarnings('ignore')
 
 # https://github.com/pytorch/vision/tree/main/references/detection
 
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
-sagemaker = False
+
+def evaluate_model(model, data_loader, device="cuda" if torch.cuda.is_available() else "cpu"):
+    return evaluate(model, data_loader, device=device)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+    SAGEMAKER_TRAINING = False
 
+    parser = argparse.ArgumentParser()
     # hyperparameters sent by the client are passed as command-line arguments to the script.
     parser.add_argument('--num-classes', type=int,
                         required=False, default=2)
 
     # Data, model, and output directories
-    parser.add_argument('--model-dir', type=str,
-                        default=os.environ['SM_MODEL_DIR'] if sagemaker else "./model")
-    parser.add_argument('--test', type=str,
-                        default=os.environ['SM_CHANNEL_TEST'] if sagemaker else "../datasets/SKU110K")
+    parser.add_argument('--test-data', type=str,
+                        default=os.environ['SM_CHANNEL_TEST'] if SAGEMAKER_TRAINING else "../dataset/SKU110K")
     parser.add_argument('--model', type=str, default=None, required=True)
     parser.add_argument('--model-path', type=str, default=None, required=False)
     parser.add_argument('--mode', type=str, default="test", required=False)
@@ -36,7 +37,7 @@ if __name__ == "__main__":
     print("Parsed arguments")
 
     dataset_test = SKU110kDataset(
-        args.test, get_transforms(is_train=False), args.mode)
+        args.test_data, get_transforms(is_train=False), args.mode)
     print(len(dataset_test))
     print("Loaded SKU110K dataset")
 
@@ -47,14 +48,21 @@ if __name__ == "__main__":
 
     print("Created data loaders")
     if args.model != "YOLO":
-        model = get_model(model_name=args.model, num_classes=args.num_classes)
+        try:
+            module = importlib.import_module('model')
+            if hasattr(module, args.model):
+                class_obj = getattr(module, args.model)
+                model = class_obj()
+            else:
+                print(
+                    f"Class '{args.model}' not found in module 'model'")
+        except ImportError:
+            print(f"Module 'model' not found")
     else:
-        print(args.model_path)
-        model_path = args.model_path
-        model = YOLO_COCO(model_path)
+        model = YOLO_COCO(args.model_path)
     if args.model_path is not None and args.model != "YOLO":
         print("loading state dict:", args.model_path)
         model.load_state_dict(torch.load(args.model_path))
     # move model to the GPU if possible
     model.to(DEVICE)
-    evaluate(model, data_loader_test, device=DEVICE,)
+    evaluate_model(model, data_loader_test)

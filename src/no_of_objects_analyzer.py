@@ -1,13 +1,16 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import argparse
 
-def list_files(path):
-    train_object_counts, val_object_counts, test_object_counts = [],[],[]
+
+def count_objects_in_dataset(path):
+    train_object_counts, val_object_counts, test_object_counts = [], [], []
     # Iterate through all files and folders in the given path
-    for root, dirs, files in os.walk(path):
+    for root, _, files in os.walk(path):
         # Iterate through all files in the current folder
         for file in files:
+            print(file)
             # Print the absolute path of each file
             if file.endswith(".txt"):
                 with open(os.path.abspath(os.path.join(root, file)), "r") as f:
@@ -20,9 +23,16 @@ def list_files(path):
                         test_object_counts.append(no_of_objects)
     return np.array(train_object_counts), np.array(val_object_counts), np.array(test_object_counts)
 
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dataset-path', type=str,
+                        default="./dataset/SKU110K")
+    args, _ = parser.parse_known_args()
+
     # Call the function with the path of the folder you want to list files for
-    train_object_counts, val_object_counts, test_object_counts = list_files("./Datasets/SKU110K/labels")
+    train_object_counts, val_object_counts, test_object_counts = count_objects_in_dataset(
+        args.dataset_path + "/labels")
 
     fig, axs = plt.subplots(1, 3)
     fig.suptitle("Histograms of number of objects in an image")

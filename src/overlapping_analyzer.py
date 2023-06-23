@@ -1,11 +1,12 @@
 import os
+from bbox_utils import BoundingBoxUtils
 import numpy as np
 import matplotlib.pyplot as plt
 from itertools import permutations
-from utils import calculate_iou, cxcywh_2_xtytxbyb
+import argparse
 
 
-def list_files(path):
+def analyze_ious_of_objects(path):
     train_object_ious, val_object_ious, test_object_ious = [], [], []
 
     for root, _, files in os.walk(path):
@@ -21,10 +22,10 @@ def list_files(path):
 
                     max_iou = 0.00
                     for obj1, obj2 in permutations(objects, 2):
-                        obj1 = cxcywh_2_xtytxbyb(obj1)
-                        obj2 = cxcywh_2_xtytxbyb(obj2)
+                        obj1 = BoundingBoxUtils.cxcywh_2_xtytxbyb(obj1)
+                        obj2 = BoundingBoxUtils.cxcywh_2_xtytxbyb(obj2)
 
-                        iou = calculate_iou(obj1, obj2)
+                        iou = BoundingBoxUtils.calculate_iou(obj1, obj2)
                         if iou > 0.95:
                             if "train" in file:
                                 print("Train")
@@ -45,8 +46,13 @@ def list_files(path):
 
 
 if __name__ == "__main__":
-    train_object_ious, val_object_ious, test_object_ious = list_files(
-        "./SKU110K/labels")
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dataset-path', type=str,
+                        default="./dataset/SKU110K")
+    args, _ = parser.parse_known_args()
+
+    train_object_ious, val_object_ious, test_object_ious = analyze_ious_of_objects(
+        args.dataset_path + "/labels")
 
     fig, axs = plt.subplots(1, 3)
     axs[0].set_title("Train")

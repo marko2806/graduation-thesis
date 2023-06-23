@@ -1,11 +1,12 @@
 import os
 from PIL import Image
+import argparse
 
 
-def list_files(path):
+def analyze_resolutions(path):
     resolutions = []
 
-    for root, dirs, files in os.walk(path):
+    for root, _, files in os.walk(path):
         for file in files:
             if file.endswith((".png", ".jpg", ".jpeg")):
                 file_path = os.path.abspath(os.path.join(root, file))
@@ -17,8 +18,12 @@ def list_files(path):
 
 
 if __name__ == "__main__":
-    dataset_path = "./Datasets/SKU110k"
-    resolutions = list_files(dataset_path)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dataset-path', type=str,
+                        default="./dataset/SKU110K")
+    args, _ = parser.parse_known_args()
+
+    resolutions = analyze_resolutions(args.dataset_path)
 
     print("Number of different resolutions:", len(resolutions))
     for resolution in resolutions:

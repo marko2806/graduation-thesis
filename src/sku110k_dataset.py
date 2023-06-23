@@ -3,7 +3,7 @@ import torch
 import os
 import numpy as np
 from torch.utils.data import Dataset
-from utils import cxcywh_2_xtytxbyb
+from bbox_utils import BoundingBoxUtils
 import cv2
 
 
@@ -14,7 +14,7 @@ class SKU110kDataset(Dataset):
         self.images = list()
         self.labels = list()
         self.normalize_boxes = normalize_boxes
-        for root, dirs, files in os.walk(root):
+        for root, _, files in os.walk(root):
             # Iterate through all files in the current folder
             for file in files:
                 if type in file:
@@ -46,7 +46,7 @@ class SKU110kDataset(Dataset):
                 cls, x_center, y_center, width, height = int(cls), float(
                     x_center), float(y_center), float(width), float(height)
 
-                x_top, y_top, x_bottom, y_bottom = cxcywh_2_xtytxbyb(
+                x_top, y_top, x_bottom, y_bottom = BoundingBoxUtils.cxcywh_2_xtytxbyb(
                     [x_center, y_center, width, height])
                 if not self.normalize_boxes:
                     x_top *= image_width
@@ -78,29 +78,3 @@ class SKU110kDataset(Dataset):
 
     def __len__(self):
         return len(self.images)
-
-
-if __name__ == "__main__":
-    dataset = SKU110kDataset("../datasets/SKU110K", None, "test", False)
-
-    large_count = 0
-    normal_count = 0
-    small_count = 0
-
-    for i in range(0, len(dataset)):
-        image, target = dataset.__getitem__(i, False)
-        for j in range(0, target["boxes"].shape[0]):
-            print(i)
-            label = target["boxes"][j]
-            area = (int(label[3]) - int(label[1])) * \
-                (int(label[2]) - int(label[0]))
-            if area < 32 * 32:
-                small_count += 1
-            elif area > 96 * 96:
-                large_count += 1
-            else:
-                normal_count += 1
-
-    print("Large objects count: ", large_count)
-    print("Normal objects count: ", normal_count)
-    print("Small objects count: ", small_count)
