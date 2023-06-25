@@ -9,16 +9,16 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from ultralytics import YOLO
 from bbox_utils import BoundingBoxUtils
 from torchvision.transforms import functional as F
-
+from torchvision.models.detection.ssd import SSD as SSD_TORCH
 
 class Model(ABC):
     @abstractmethod
-    def __call__(self, num_classes=2, freeze_backbone=False, mean=None, std=None, iou_thresh=0.5):
+    def get_model(self, num_classes=2, freeze_backbone=False, mean=None, std=None, iou_thresh=0.5):
         pass
 
 
 class FasterRCNN(Model):
-    def __call__(self, num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thesh=0.5):
+    def get_model(self, num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thesh=0.5):
         print("Loading FasterRCNN model")
         # load a model pre-trained on COCO
         model = fasterrcnn_resnet50_fpn_v2(
@@ -43,9 +43,10 @@ class FasterRCNN(Model):
 
 
 class SSD(Model):
-    def __call__(self, num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thresh=0.5):
+    def get_model(self, num_classes=2, freeze_backbone=None, mean=None, std=None, iou_thresh=0.5):
         img_size = 1000
         print("Loading SSD model")
+        print(iou_thresh)
         model = ssd300_vgg16(weights="COCO_V1",
                              topk_candidates=3000,
                              detections_per_img=1000,
@@ -57,8 +58,8 @@ class SSD(Model):
             model.backbone, (img_size, img_size))
         num_anchors = model.anchor_generator.num_anchors_per_location()
 
-        model = SSD(model.backbone, model.anchor_generator, (img_size, img_size),
-                    num_classes, topk_candidates=3000, detections_per_img=1000)
+        model = SSD_TORCH(model.backbone, model.anchor_generator, (img_size, img_size),
+                    num_classes, topk_candidates=3000, detections_per_img=1000, nms_thresh=iou_thresh)
 
         model.head.classification_head = SSDClassificationHead(
             in_channels, num_anchors, num_classes)
@@ -67,7 +68,7 @@ class SSD(Model):
 
 
 class RetinaNet(Model):
-    def __call__(self, num_classes=2, freeze_backbone=False, mean=None, std=None, iou_thresh=0.5):
+    def get_model(self, num_classes=2, freeze_backbone=False, mean=None, std=None, iou_thresh=0.5):
         print("Loading RetinaNet model")
         model = retinanet_resnet50_fpn_v2(
             weights="COCO_V1",

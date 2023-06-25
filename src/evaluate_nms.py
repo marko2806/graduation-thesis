@@ -2,13 +2,13 @@ from torch.utils.data import DataLoader
 from image_transforms import get_transforms
 import torch
 import torchvision_utils.utils as utils
-from dataset.sku110k_dataset import SKU110kDataset
+from sku110k_dataset import SKU110kDataset
 import os
 import argparse
 import importlib
 import numpy as np
 from model import YOLO_COCO
-from evaluate_model import evaluate
+from torchvision_utils.engine import evaluate
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     parser.add_argument('--model-dir', type=str,
                         default=os.environ['SM_MODEL_DIR'] if sagemaker else "./model")
     parser.add_argument('--test', type=str,
-                        default=os.environ['SM_CHANNEL_TEST'] if sagemaker else "../dataset/SKU110K")
+                        default=os.environ['SM_CHANNEL_TEST'] if sagemaker else "./dataset/SKU110K")
     parser.add_argument('--model', type=str, default=None, required=True)
     parser.add_argument('--model-path', type=str, default=None, required=False)
     args, _ = parser.parse_known_args()
@@ -53,7 +53,9 @@ if __name__ == "__main__":
                 module = importlib.import_module('model')
                 if hasattr(module, args.model):
                     class_obj = getattr(module, args.model)
-                    model = class_obj()
+                    modelObj = class_obj()
+                    print(modelObj)
+                    model = modelObj.get_model(iou_thresh=i)
                 else:
                     print(
                         f"Class '{args.model}' not found in module 'model'")
@@ -65,10 +67,10 @@ if __name__ == "__main__":
                 print("loading state dict:", args.model_path)
                 model.load_state_dict(torch.load(args.model_path))
 
-            evaluate(model, data_loader_test)
+            evaluate(model, data_loader_test, DEVICE)
         else:
             print(args.model_path)
             model_path = args.model_path
             model = YOLO_COCO(model_path, iou_thresh=i)
 
-            evaluate(model, data_loader_test)
+            evaluate(model, data_loader_test, DEVICE)

@@ -3,7 +3,7 @@ import torch
 import argparse
 from image_transforms import get_transforms
 from torch.utils.data import DataLoader
-from dataset.sku110k_dataset import SKU110kDataset
+from sku110k_dataset import SKU110kDataset
 from evaluate_model import evaluate
 from torchvision_utils.engine import train_one_epoch
 from torchvision_utils.utils import collate_fn
@@ -41,7 +41,9 @@ def main(args):
             module = importlib.import_module('model')
             if hasattr(module, args.model):
                 class_obj = getattr(module, args.model)
-                model = class_obj()
+                modelObj = class_obj()
+                print(modelObj)
+                model = modelObj.get_model()
             else:
                 print(
                     f"Class '{args.model}' not found in module 'model'")

@@ -3,7 +3,7 @@ from image_transforms import get_transforms
 import torch
 from torchvision_utils.engine import evaluate
 import torchvision_utils.utils as utils
-from dataset.sku110k_dataset import SKU110kDataset
+from sku110k_dataset import SKU110kDataset
 import os
 import argparse
 from model import YOLO_COCO
@@ -12,10 +12,6 @@ import importlib
 warnings.filterwarnings('ignore')
 
 # https://github.com/pytorch/vision/tree/main/references/detection
-
-
-def evaluate_model(model, data_loader, device="cuda" if torch.cuda.is_available() else "cpu"):
-    return evaluate(model, data_loader, device=device)
 
 
 if __name__ == "__main__":
@@ -52,7 +48,9 @@ if __name__ == "__main__":
             module = importlib.import_module('model')
             if hasattr(module, args.model):
                 class_obj = getattr(module, args.model)
-                model = class_obj()
+                modelObj = class_obj()
+                print(modelObj)
+                model = modelObj.get_model()
             else:
                 print(
                     f"Class '{args.model}' not found in module 'model'")
@@ -65,4 +63,4 @@ if __name__ == "__main__":
         model.load_state_dict(torch.load(args.model_path))
     # move model to the GPU if possible
     model.to(DEVICE)
-    evaluate_model(model, data_loader_test)
+    evaluate(model, data_loader_test, DEVICE)
