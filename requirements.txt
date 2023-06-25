@@ -4,3 +4,6 @@ torchvision==0.14.1
 tqdm==4.65.0
 pycocotools==2.0.6
 ultralytics==8.0.50
+numpy==1.23.5
+matplotlib==3.7.1
+opencv-python==4.7.0

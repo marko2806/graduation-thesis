@@ -1,4 +1,4 @@
-from dataset.sku110k_dataset import SKU110kDataset
+from sku110k_dataset import SKU110kDataset
 import torch
 import torchvision
 from torchvision import transforms as torchtrans
